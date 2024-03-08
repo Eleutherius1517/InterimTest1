@@ -81,16 +81,16 @@ public class NoteBook implements IGetModel {
             }
         }
     }
-    public void printNotes(){
-        for (Note note : notes) {
-            System.out.println("ID: " + note.getId());
-            System.out.println("Заголовок: " + note.getTitle());
-            System.out.println("Содержание: " + note.getBody());
-            System.out.println("Дата создания: " + note.getCreatedDateTime());
-            System.out.println("Дата изменения: " + note.getModifiedDateTime());
-            System.out.println("");
-        }
-    }
+    // public void printNotes(){
+    //     for (Note note : notes) {
+    //         System.out.println("ID: " + note.getId());
+    //         System.out.println("Заголовок: " + note.getTitle());
+    //         System.out.println("Содержание: " + note.getBody());
+    //         System.out.println("Дата создания: " + note.getCreatedDateTime());
+    //         System.out.println("Дата изменения: " + note.getModifiedDateTime());
+    //         System.out.println("");
+    //     }
+    // }
 
     
     
