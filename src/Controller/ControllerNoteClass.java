@@ -21,6 +21,7 @@ public class ControllerNoteClass {
             String command = view.prompt("Введите номер операции: ");
             switch (command) {
                 case "1":
+                    System.out.println("НЕ ЗАБУДЬТЕ ОТСОРТИРОВАТЬ ЗАМЕТКИ ПО ДАТЕ ИЛИ ID");
                     view.printAllNotes(model.getListNotes());
                     break;
         
@@ -60,8 +61,37 @@ public class ControllerNoteClass {
                     model.deleteNote(deleteId);
                     System.out.println("Заметка успешно удалена!");
                         break;
-        
                 case "5":
+                        model.loadNotes();
+                        System.out.println("Заметки успешно загруженны!");
+                        System.out.println("НЕ ЗАБУДЬТЕ ОТСОРТИРОВАТЬ ЗАМЕТКИ ПО ДАТЕ ИЛИ ID");
+                        view.printAllNotes(model.getListNotes());
+                        break;
+                case "6":
+                    String strSelectId;
+                    int selectId;
+                    strSelectId = view.prompt("Введите ID заметки, которую хотите вывести на экран: ");
+                    if (strSelectId.matches("[-+]?\\d+")) {
+                        selectId = Integer.parseInt(strSelectId);
+                    }else{
+                        System.out.println("Вы ввели невалидный ID! попробуйте еще раз!");
+                        break;
+                    }
+                        model.showNoteWithId(selectId);
+                        System.out.println("Выбранная заметка распечатана!");
+                        break;
+                case "7":
+                        model.sortNotesDateTime();
+                        view.printAllNotes(model.getListNotes());
+                        System.out.println("Заметки успешно отсортированы по дате изменения!");
+                        break;
+                case "8":
+                        model.sortNotesId();
+                        view.printAllNotes(model.getListNotes());
+                        System.out.println("Заметки успешно отсортированы по ID!");
+                        break;
+            
+                case "9":
                     model.SaveNotes();
                     System.out.println("Заметки успешно сохранены! Работа программы завершена!");
                     System.exit(0);

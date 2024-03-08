@@ -31,6 +31,10 @@ public class ViewNoteClass implements IGetView {
         System.out.println("2. Добавить заметку");
         System.out.println("3. Редактировать заметку" );
         System.out.println("4. Удалить заметку" );
-        System.out.println("5. Сохранить заметки и выйти" );
+        System.out.println("5. Загрузить заметку из файла" );
+        System.out.println("6. Выбрать заметку по ID" );
+        System.out.println("7. ОТСОРТИРОВАТЬ ЗАМЕТКИ ПО ДАТЕ" );
+        System.out.println("8. ОТСОРТИРОВАТЬ ЗАМЕТКИ ПО ID" );
+        System.out.println("9. Сохранить заметки и выйти" );
     }
 }

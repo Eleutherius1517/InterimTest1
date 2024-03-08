@@ -2,6 +2,7 @@ package Model;
 
 import java.io.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,6 +81,37 @@ public class NoteBook implements IGetModel {
                 break;
             }
         }
+    }
+    public void sortNotesDateTime(){
+        Note tempNote = notes.get(0);
+        for (int i = 0; i < notes.size(); i++) {
+            for (int index = 0; index < notes.size() - 1; index++) {
+                int count1 = notes.get(index).getModifiedDateTime().compareTo(notes.get(index + 1).getModifiedDateTime());
+                if(count1 > 0){
+                    tempNote = notes.get(index);
+                    notes.remove(index);
+                    notes.add( index + 1, tempNote);
+                }
+            }
+            
+        }
+    }
+    public void sortNotesId(){
+        Note tempNote = notes.get(0);
+        for (int i = 0; i < notes.size(); i++) {
+            for (int index = 0; index < notes.size() - 1; index++) {
+                Boolean count1 = notes.get(index).getId() > notes.get(index + 1).getId();
+                if(count1){
+                    tempNote = notes.get(index);
+                    notes.remove(index);
+                    notes.add( index + 1, tempNote);
+                }
+            }
+            
+        }
+    }
+    public void showNoteWithId(int id){
+        System.out.println(notes.get(id));
     }
     // public void printNotes(){
     //     for (Note note : notes) {

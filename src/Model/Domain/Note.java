@@ -43,5 +43,11 @@ public class Note {
     public LocalDateTime getModifiedDateTime() {
         return modifiedDateTime;
     }
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        return "ID: " + id + "\nЗаголовок: " + title + "\nСодержание: " + body + "\nДата создания: " + createdDateTime.format(formatter)
+                + "\nДата изменения: " + modifiedDateTime.format(formatter) + "";
+    }
     
 }

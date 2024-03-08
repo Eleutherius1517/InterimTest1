@@ -11,5 +11,8 @@ public interface IGetModel {
     public void addNotes(String title, String body);
     public void editNote(int id, String title, String body);
     public void deleteNote (int id);
+    public void sortNotesDateTime();
+    public void sortNotesId();
+    public void showNoteWithId(int id);
 
 }
